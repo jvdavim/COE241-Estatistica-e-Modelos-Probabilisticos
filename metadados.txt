@@ -1,0 +1,4 @@
+idade: IDADE (anos)
+peso: Peso (kg)
+carga: Carga Final:
+vo2: VO2 medido máximo (mL/kg/min)
