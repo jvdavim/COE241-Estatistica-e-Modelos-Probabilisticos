@@ -18,7 +18,7 @@ def main():
 def plot(x):
     distribution = ['expon', 'norm', 'lognorm', 'weibull_min']
     titles = ['Exponencial', 'Gaussiana', 'Lognormal', 'Weibull']
-    sparams = [exp_mle(x), norm_mle(x), lognorm_mle(x), weibull_mle(x)]
+    sparams = [expon_mle(x), norm_mle(x), lognorm_mle(x), weibull_mle(x)]
 
     f, a = plt.subplots(2, 2)
     a = a.ravel()

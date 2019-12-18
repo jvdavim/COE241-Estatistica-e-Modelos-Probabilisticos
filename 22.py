@@ -8,7 +8,7 @@ def main():
 
     calc_mean_and_var(df)
 
-    calc_boxplot(df)
+    boxplot(df)
 
 
 def calc_mean_and_var(df):
@@ -25,7 +25,7 @@ def calc_mean_and_var(df):
           f'\nMédia: {mean_carga} | Variâcia: {var_carga}\nVO2\nMédia: {mean_vo2} | Variâcia: {var_vo2}\n')
 
 
-def calc_boxplot(df):
+def boxplot(df):
     titles = ['Idade', 'Peso', 'Carga', 'VO2']
 
     f, a = plt.subplots(2, 2)

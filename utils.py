@@ -1,33 +1,17 @@
-import math
-
-from scipy.stats import weibull_min
+import scipy.stats
 
 
-def exp_mle(x):
-    return len(x) / x.sum()
+def expon_mle(x):
+    return scipy.stats.expon.fit(x, floc=0)
 
 
 def norm_mle(x):
-    mean = x.mean()
-    var = 0
-    for i, v in x.iteritems():
-        var += (v - mean) ** 2
-    var = var / len(x)
-    return mean, var
+    return scipy.stats.norm.fit(x)
 
 
 def lognorm_mle(x):
-    mean = 0
-    for i, v in x.iteritems():
-        mean += math.log(v)
-    mean = mean / len(x)
-    var = 0
-    for i, v in x.iteritems():
-        var += (math.log(v) - mean) ** 2
-    var = var / len(x)
-    return mean, var
+    return scipy.stats.lognorm.fit(x, floc=0)
 
 
 def weibull_mle(x):
-    # Shape, location, scale
-    return weibull_min.fit(x, floc=0)
+    return scipy.stats.weibull_min.fit(x, floc=0)
